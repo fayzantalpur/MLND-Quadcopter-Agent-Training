@@ -1,0 +1,21 @@
+Category,Parameter,Parameter Effects,My Discovery
+Task,Action Size,Dimension of each action. i.e. Rotors to control.,Reducing the number of rotors to control makes the agent more efficient. 
+Task,Action Low,Minimum value of each action dimension. i.e. Lowest speed allowed of any rotor,I assumed that this parameter will be really useful but Its only the minimum limit of rotor speed.
+Task,Action High,Maximum value of each action dimension. i.e. Highest speed allowed of any rotor,I assumed that this parameter will be really useful but Its only the maximum limit of rotor speed.
+Task,Reward Function,Feedback signal to train the quadcopter agent.,This is one of the key parameters to control. 
+Task,Runtime,Runtime of each run.,Increasing the runtime makes the episodes longer. 
+Task,Initial Position,"Initial position of the quadcopter in (x,y,z) dimensions and the Euler angles.",Changing the initial position makes the problem harder.
+Task,Initial Angle Velocites,Initial radians/second for each of the three Euler angles.,Changing Initial euler angles makes the problem harder.
+Task,Initial Velocities,"Initial velocity of the quadcopter in (x,y,z) dimensions.",Changing initial velocites makes the problem harder.
+Task,Action Repeat,Default Set at 3. Number of times an action is repeated.,I wasn't able to figure out how this parameter effects the problem.
+Task,State Size,Action repeat * Multiplied by 6?. Dimension of each state.,I also couldn't figure out what this parameter does.
+Agent,DDPG Actor: Neural Network,"Can update the network itself by different layer sizes, activations, add batch normalization, regularizers or additional loss function(s),",Adding more layers increases the complexity of the model without much improvement.
+Agent,DDPG Critic: Neural Network,"Can update the network itself by different layer sizes, activations, add batch normalization, regularizers or additional loss function(s),",Adding more layers increases the complexity of the model without much improvement.
+Agent,DDPG Replay Buffer: Buffer Size,Maximum size of buffer,Increasing the buffer size does not necessarily result in better agent.
+Agent,DDPG Replay Buffer: Batch Size,Size of each training batch,Did not result in any significant improvement.
+Agent,DDPG: Gamma,Discount factor,Reducing Gamma makes the agent focus on short term goals.
+Agent,DDPG: Tau,"For soft update of target parameters / default 0.01; higher means use more local, less target",Increaseing Tau makes  it longer for agent to converge to a solution.
+Agent,DDPG: Noise Process Exploration Mu,Long-term mean of the process,I am not sure how changing mean affected the Agent.
+Agent,DDPG: Noise Process Exploration Theta,Rate of reversion to mean,Determines how long the agent will keep exploring.
+Agent,DDPG: Noise Process Exploration Sigma,Volatility of the Brownian motion,Determines how hard will it be for agent to filter noise effectively.
+Agent,DDPG: Number of Episodes,Number of Episodes to Train per Each Agent,Increasing the episodes is worth it. Agent does seem to get stuck in local minima solutions.
